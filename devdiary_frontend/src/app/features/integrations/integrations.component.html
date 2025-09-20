@@ -1,0 +1,25 @@
+<div class="integrations">
+  <div class="left ocean-card">
+    <div class="head">
+      <h2>Integrations</h2>
+      <button class="btn btn-ghost" (click)="reload()">Reload</button>
+    </div>
+    <div class="muted" *ngIf="loading">Loading...</div>
+    <div class="error" *ngIf="error">{{ error }}</div>
+    <div class="grid">
+      <button class="tile" *ngFor="let i of list" (click)="select(i)">
+        <div class="title">{{ i.name }}</div>
+        <div class="status" [class.connected]="i.connected">{{ i.connected ? 'Connected' : 'Not connected' }}</div>
+      </button>
+    </div>
+  </div>
+
+  <div class="right ocean-card" *ngIf="selected">
+    <h3>Configure {{ selected.name }}</h3>
+    <div class="form">
+      <input placeholder="Access token" [(ngModel)]="form['token']" />
+      <input placeholder="Project/Repo (optional)" [(ngModel)]="form['project']" />
+      <button class="btn btn-primary" (click)="connect()">Connect</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="dashboard ocean-card">
+  <div class="head">
+    <h2>Dashboard</h2>
+    <span class="badge">Beta</span>
+  </div>
+
+  <div *ngIf="loading" class="text-muted">Loading analytics...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div class="stats" *ngIf="!loading">
+    <div class="card">
+      <div class="label">Entries (7d)</div>
+      <div class="value">{{ stats['entries7d'] ?? '—' }}</div>
+    </div>
+    <div class="card">
+      <div class="label">Active Days (30d)</div>
+      <div class="value">{{ stats['activeDays30d'] ?? '—' }}</div>
+    </div>
+    <div class="card">
+      <div class="label">Top Tag</div>
+      <div class="value">{{ stats['topTag'] ?? '—' }}</div>
+    </div>
+  </div>
+
+  <div class="charts">
+    <div class="chart-card">
+      <h4>Entries per Day</h4>
+      <div class="placeholder">Chart coming soon</div>
+    </div>
+    <div class="chart-card">
+      <h4>Topic/Tag Trends</h4>
+      <div class="placeholder">Chart coming soon</div>
+    </div>
+  </div>
+</div>

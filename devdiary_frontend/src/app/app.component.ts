@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import { LayoutComponent } from './layout/layout.component';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [LayoutComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'devdiary_frontend is being generated';
+  // Root component simply renders the layout; page titles handled via routes.
+  title = 'DevDiary';
 }

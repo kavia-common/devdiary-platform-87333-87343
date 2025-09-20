@@ -1,0 +1,59 @@
+:root {
+  --dd-primary: #2563EB;
+  --dd-secondary: #F59E0B;
+  --dd-success: #F59E0B;
+  --dd-error: #EF4444;
+  --dd-bg: #f9fafb;
+  --dd-surface: #ffffff;
+  --dd-text: #111827;
+  --dd-muted: #6b7280;
+  --dd-border: #e5e7eb;
+  --dd-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  --dd-radius: 12px;
+  --dd-radius-sm: 8px;
+  --dd-radius-lg: 16px;
+  --dd-gradient: linear-gradient(135deg, rgba(59,130,246,0.10), rgba(249,250,251,1));
+}
+
+.ocean-surface {
+  background: var(--dd-surface);
+  border: 1px solid var(--dd-border);
+  border-radius: var(--dd-radius);
+  box-shadow: var(--dd-shadow);
+}
+
+.ocean-card {
+  background: var(--dd-surface);
+  border: 1px solid var(--dd-border);
+  border-radius: var(--dd-radius);
+  box-shadow: var(--dd-shadow);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .625rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--dd-border);
+  background: var(--dd-surface);
+  color: var(--dd-text);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--dd-shadow); }
+.btn-primary { background: var(--dd-primary); color: #fff; border-color: transparent; }
+.btn-primary:hover { filter: brightness(1.05); }
+.btn-ghost { background: transparent; }
+.btn-amber { background: var(--dd-secondary); color: #111827; border-color: transparent; }
+.badge {
+  padding: .25rem .5rem; border-radius: 999px; font-size: .75rem; background: #eef2ff; color: var(--dd-primary);
+}
+
+/* Simple grid helpers */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+.fade-in { animation: fade .25s ease; }
+@keyframes fade { from { opacity: 0; transform: translateY(4px) } to { opacity: 1; transform: translateY(0) } }

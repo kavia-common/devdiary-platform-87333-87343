@@ -1,0 +1,16 @@
+.summaries { padding: 1rem; }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .75rem; }
+.range { display: flex; align-items: center; gap: .5rem; }
+.range input {
+  border: 1px solid var(--dd-border); border-radius: 10px; padding: .4rem .5rem;
+}
+.content { min-height: 120px; }
+.error { color: var(--dd-error); }
+.summary-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin-top: .5rem;
+}
+.summary-grid > div {
+  border: 1px solid var(--dd-border); border-radius: 10px; padding: .6rem .7rem; background: #fff;
+}
+.summary-grid h4 { margin-bottom: .25rem; color: var(--dd-primary); }
+@media (max-width: 768px) { .summary-grid { grid-template-columns: 1fr; } }

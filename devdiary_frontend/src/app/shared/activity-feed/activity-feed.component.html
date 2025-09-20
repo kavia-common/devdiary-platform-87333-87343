@@ -1,0 +1,16 @@
+<div class="feed">
+  <h3>Activity</h3>
+  <div class="list">
+    <div *ngIf="loading" class="muted">Loading...</div>
+    <div *ngIf="!loading && items.length === 0" class="muted">No recent activity</div>
+    <div *ngIf="error" class="error">{{ error }}</div>
+
+    <div *ngFor="let it of items" class="item">
+      <div class="meta">
+        <span class="src">{{ it.source }}</span>
+        <span class="time">{{ it.time | date:'short' }}</span>
+      </div>
+      <div class="text">{{ it.text }}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="summaries ocean-card">
+  <div class="header">
+    <h2>Stand-up Summary</h2>
+    <div class="range">
+      <input type="date" [(ngModel)]="from" />
+      <span>to</span>
+      <input type="date" [(ngModel)]="to" />
+      <button class="btn btn-primary" (click)="generate()" [disabled]="loading">Generate</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <div *ngIf="loading" class="text-muted">Generating summary...</div>
+    <div *ngIf="error" class="error">{{ error }}</div>
+
+    <div *ngIf="summary" class="summary-grid">
+      <div>
+        <h4>Highlights</h4>
+        <ul>
+          <li *ngFor="let h of summary.highlights">{{ h }}</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Blockers</h4>
+        <ul>
+          <li *ngFor="let b of summary.blockers">{{ b }}</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Plans</h4>
+        <ul>
+          <li *ngFor="let p of summary.plans">{{ p }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

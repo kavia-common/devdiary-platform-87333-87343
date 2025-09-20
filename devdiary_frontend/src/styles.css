@@ -1,12 +1,17 @@
-/* Global styles for minimalistic design */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  background-color: #ffffff;
+/* Global styles for minimalist Ocean Professional theme */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  background: var(--dd-bg, #f9fafb);
+  color: var(--dd-text, #111827);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
 }
+a { color: var(--dd-primary, #2563EB); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+.shadow-soft { box-shadow: var(--dd-shadow); }
+.rounded { border-radius: var(--dd-radius); }
+.text-muted { color: var(--dd-muted, #6b7280); }
+.surface { background: var(--dd-surface, #ffffff); border: 1px solid var(--dd-border, #e5e7eb); border-radius: var(--dd-radius); }
+.gradient-bg { background: var(--dd-gradient, linear-gradient(135deg, rgba(59,130,246,0.1), rgba(249,250,251,1))); }

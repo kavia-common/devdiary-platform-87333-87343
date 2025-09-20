@@ -1,0 +1,21 @@
+.diary { display: grid; grid-template-columns: 1fr; gap: .75rem; }
+.composer, .list { padding: 1rem; }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .75rem; }
+.controls { display: flex; align-items: center; gap: .5rem; }
+.fields textarea, .fields input {
+  width: 100%;
+  border: 1px solid var(--dd-border);
+  border-radius: 10px;
+  padding: .6rem .7rem;
+  outline: none;
+  background: #fff;
+}
+.fields textarea { margin-bottom: .5rem; resize: vertical; }
+.fields .row { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.actions { margin-top: .5rem; display: flex; align-items: center; gap: .5rem; }
+.error { color: var(--dd-error); }
+.list h3 { margin-bottom: .5rem; }
+.entry { border: 1px solid var(--dd-border); border-radius: 10px; padding: .6rem .7rem; background: #fff; margin-bottom: .5rem; }
+.entry .meta { display: flex; justify-content: space-between; margin-bottom: .25rem; color: var(--dd-muted); }
+.tags { margin-top: .25rem; display: flex; gap: .4rem; flex-wrap: wrap; }
+.tag { background: #eff6ff; color: var(--dd-primary); border-radius: 999px; padding: .15rem .5rem; font-size: .8rem; }

@@ -1,0 +1,51 @@
+<div class="app-root gradient-bg">
+  <!-- Top Bar -->
+  <header class="topbar ocean-surface fade-in">
+    <div class="left">
+      <div class="brand">
+        <div class="logo">DD</div>
+        <div class="brand-text">
+          <strong>DevDiary</strong>
+          <span class="badge">Ocean Professional</span>
+        </div>
+      </div>
+      <nav class="quick">
+        <a routerLink="/diary" routerLinkActive="active">Diary</a>
+        <a routerLink="/summaries" routerLinkActive="active">Summaries</a>
+        <a routerLink="/integrations" routerLinkActive="active">Integrations</a>
+        <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      </nav>
+    </div>
+    <div class="right">
+      <button class="btn btn-ghost" (click)="toggleFullScreen()" title="Toggle full-screen workspace">
+        <span class="material">fullscreen</span>
+        <span>{{ isFullScreen ? 'Exit' : 'Full-screen' }}</span>
+      </button>
+      <button class="btn btn-primary">New Entry</button>
+      <div class="avatar" title="Profile / Settings">
+        <img alt="user avatar" src="https://api.dicebear.com/9.x/initials/svg?seed=DD&radius=50&backgroundType=gradientLinear" />
+      </div>
+    </div>
+  </header>
+
+  <!-- Workspace -->
+  <div class="workspace">
+    <!-- Left Navigation -->
+    <aside class="sidenav ocean-card">
+      <a routerLink="/diary" routerLinkActive="active"><span class="icon">📝</span>Diary</a>
+      <a routerLink="/summaries" routerLinkActive="active"><span class="icon">📌</span>Summaries</a>
+      <a routerLink="/integrations" routerLinkActive="active"><span class="icon">🔗</span>Integrations</a>
+      <a routerLink="/dashboard" routerLinkActive="active"><span class="icon">📊</span>Dashboard</a>
+    </aside>
+
+    <!-- Center Content -->
+    <main class="content">
+      <router-outlet />
+    </main>
+
+    <!-- Right Sidebar (Passive Activity Feed) -->
+    <aside class="rightbar ocean-card" *ngIf="!isFullScreen">
+      <app-activity-feed />
+    </aside>
+  </div>
+</div>

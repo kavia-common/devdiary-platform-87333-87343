@@ -27,7 +27,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/styles.theme.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -67,7 +68,8 @@
               "buildTarget": "angular:build:production"
             },
             "development": {
-              "buildTarget": "angular:build:development"
+              "buildTarget": "angular:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development",

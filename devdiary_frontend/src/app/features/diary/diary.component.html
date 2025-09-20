@@ -1,0 +1,40 @@
+<div class="diary">
+  <div class="composer ocean-card">
+    <div class="header">
+      <h2>Daily Log</h2>
+      <div class="controls">
+        <input type="date" [(ngModel)]="today" (change)="refresh()" />
+        <button class="btn btn-ghost" (click)="refresh()">Refresh</button>
+      </div>
+    </div>
+
+    <div class="fields">
+      <textarea [(ngModel)]="text" placeholder="What did you work on today? Tasks, PRs, blockers, decisions..." rows="5"></textarea>
+      <div class="row">
+        <input [(ngModel)]="tags" placeholder="Tags (comma separated)" />
+        <input [(ngModel)]="mood" placeholder="Mood (optional)" />
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" (click)="addEntry()" [disabled]="saving || !text.trim()">Add Entry</button>
+      <span class="text-muted" *ngIf="saving">Saving...</span>
+      <span class="error" *ngIf="error">{{ error }}</span>
+    </div>
+  </div>
+
+  <div class="list ocean-card">
+    <h3>Entries for {{ today }}</h3>
+    <div class="empty text-muted" *ngIf="entries.length === 0">No entries yet.</div>
+    <div class="entry" *ngFor="let e of entries">
+      <div class="meta">
+        <span class="badge">#{{ e.id || '—' }}</span>
+        <span class="muted">{{ e.mood || '—' }}</span>
+      </div>
+      <div class="text">{{ e.text }}</div>
+      <div class="tags" *ngIf="e.tags?.length">
+        <span class="tag" *ngFor="let t of e.tags">{{ t }}</span>
+      </div>
+    </div>
+  </div>
+</div>
